@@ -42,5 +42,3 @@ async def upload_file(file: UploadFile = File(...)):
         logger.exception("Upload failed")
         return {"error": str(e)}
 
-
-#  10 sec me aa jata h jitni bhi badi file ho
