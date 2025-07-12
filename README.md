@@ -28,14 +28,14 @@ python -m venv .venv
 source .venv/bin/activate  # On Windows: .\.venv\Scripts\activate
 ```
 
-### ⚙️ Environment Variables
+## ⚙️ Environment Variables
 Create a .env file in the project root with the following:
 
 ```
 AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;AccountName=your_account;AccountKey=your_key;EndpointSuffix=core.windows.net
 ```
 
-To upload using curl
+## To upload file
 
 ```curl
 curl -X POST http://localhost:8000/uploads -F "file=@yourfile.csv"
@@ -49,3 +49,16 @@ Response:
     "url": "https://sl2storage.blob.core.windows.net/csv-files/submission_cn.csv"
 }
 ```
+
+## 🧪 Testing Uploads
+Check your Azure Portal → Storage Account → Containers → your-container-name to confirm file upload.
+
+## 📦 Tech Stack
+
+- Python
+
+- FastAPI
+
+- Azure Blob Storage SDK
+
+- Uvicorn
