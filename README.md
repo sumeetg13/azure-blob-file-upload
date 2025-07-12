@@ -21,3 +21,31 @@ A lightweight FastAPI application to upload files (e.g., CSVs) to an Azure Blob 
 git clone https://github.com/your-username/azure-blob-upload-api.git
 cd azure-blob-file-upload
 ```
+
+### 2. Create and activate virtual Environment
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .\.venv\Scripts\activate
+```
+
+### ⚙️ Environment Variables
+Create a .env file in the project root with the following:
+
+```
+AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;AccountName=your_account;AccountKey=your_key;EndpointSuffix=core.windows.net
+```
+
+To upload using curl
+
+```curl
+curl -X POST http://localhost:8000/uploads -F "file=@yourfile.csv"
+```
+
+Response:
+
+```
+{
+    "message": "Upload successful",
+    "url": "https://sl2storage.blob.core.windows.net/csv-files/submission_cn.csv"
+}
+```
